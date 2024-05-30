@@ -44,7 +44,7 @@ pipeline {
                         dir('C:\\Users\\ktsreddy\\.jenkins\\workspace\\CI_Maven_Sonar') 
                         {
                             bat 'dir /s /b pom.xml | findstr /i "pom.xml"'
-                            bat "\"${env.M2_HOME}\"\\bin\\mvn sonar:sonar -Dsonar.projectName=%CI_Maven_Sonar% -Dsonar.java.binaries=.\\ -Dsonar.login=%SONAR_AUTH_TOKEN% -Dsonar.host.url=http://192.168.56.1:9000"
+                            bat "\"${env.M2_HOME}\"\\bin\\mvn sonar:sonar -Dsonar.projectName=%CI_Maven_Sonar% -Dsonar.java.binaries=.\\ -Dsonar.login=%SONAR_AUTH_TOKEN% -Dsonar.host.url=%SONAR_URL%"
                         }
                     }
                 }
