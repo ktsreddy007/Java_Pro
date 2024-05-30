@@ -70,7 +70,7 @@ pipeline {
             {
                  rtServer (
                  id:"Artifactory",
-                url: 'http://192.168.56.1:8082/artifactory',
+                url: 'http://192.168.56.1:8082/artifactory/Java_Pro', 
                 username:'ktsreddy',
                 password:'Admin_123',
                 timeout:300)
