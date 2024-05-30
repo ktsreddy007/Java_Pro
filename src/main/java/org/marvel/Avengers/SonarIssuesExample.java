@@ -10,7 +10,7 @@ public class SonarIssuesExample {
 
     // Method with too many parameters
     public void methodWithTooManyParameters(int param1, int param2, int param3, int param4, int param5) {
-        
+        abc;
     }
 
     // Method with a long cyclomatic complexity
