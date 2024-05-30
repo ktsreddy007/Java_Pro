@@ -69,9 +69,9 @@ pipeline {
             {
                  rtServer (
                 id:"Artifactory",
-                url: 'env.ARTIFACTORY_URL',
-                username:'env.ARTIFACTORY_USERNAME',
-                password:'env.ARTIFACTORY_PASSWORD',
+                url: env.ARTIFACTORY_URL,
+                username:env.ARTIFACTORY_USERNAME,
+                password:env.ARTIFACTORY_PASSWORD,
                 timeout:300)
             
                 rtUpload (
