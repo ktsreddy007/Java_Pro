@@ -2,6 +2,7 @@ pipeline {
     agent any
        environment {
         // Define the password as a masked environment variable
+        ARTIFACTORY_URL = 'http://192.168.56.1:8082/artifactory'   
         ARTIFACTORY_USERNAME = credentials('jfrog_user')
         ARTIFACTORY_PASSWORD = credentials('jfrog_user')   
     }  
