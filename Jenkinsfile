@@ -57,15 +57,22 @@ pipeline {
                 ARTIFACTORY_USERNAME = credentials('')
                 ARTIFACTORY_PASSWORD = credentials('')
             }*/
+
+         environment {
+        // Define the password as a masked environment variable
+        ARTIFACTORY_USERNAME = credentials('jfrog_user')
+        ARTIFACTORY_PASSWORD = credentials('jfrog_user')     
+        
+    }
         stage ('Artifact Publish')
         {
             steps
             {
                  rtServer (
                 id:"Artifactory",
-                url: 'http://192.168.56.1:8082/artifactory',
-                username:'ktsreddy',
-                password:'Admin_123',
+                url: 'env.ARTIFACTORY_URL',
+                username:'env.ARTIFACTORY_USERNAME',
+                password:'env.ARTIFACTORY_PASSWORD',
                 timeout:300)
             
                 rtUpload (
