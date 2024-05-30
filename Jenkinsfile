@@ -1,6 +1,10 @@
 pipeline {
     agent any
-      
+       environment {
+        // Define the password as a masked environment variable
+        ARTIFACTORY_USERNAME = credentials('jfrog_user')
+        ARTIFACTORY_PASSWORD = credentials('jfrog_user')   
+    }  
     stages 
     {
        stage("Project Source Code")
@@ -58,12 +62,7 @@ pipeline {
                 ARTIFACTORY_PASSWORD = credentials('')
             }*/
 
-         environment {
-        // Define the password as a masked environment variable
-        ARTIFACTORY_USERNAME = credentials('jfrog_user')
-        ARTIFACTORY_PASSWORD = credentials('jfrog_user')     
-        
-    }
+      
         stage ('Artifact Publish')
         {
             steps
