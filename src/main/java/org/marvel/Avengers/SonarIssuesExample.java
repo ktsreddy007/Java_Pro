@@ -7,7 +7,24 @@ public class SonarIssuesExample {
     public SonarIssuesExample() {
         
     }
-
+ public void methodWithDuplicatedCode(int x) {
+        if (x > 10) {
+            System.out.println("x is greater than 10");
+        } else if (x < 0) {
+            System.out.println("x is negative");
+        } else {
+            System.out.println("x is between 0 and 10");
+        }
+        
+        // Duplicated code block
+        if (x > 10) {
+            System.out.println("x is greater than 10");
+        } else if (x < 0) {
+            System.out.println("x is negative");
+        } else {
+            System.out.println("x is between 0 and 10");
+        }
+    }
     // Method with too many parameters
     public void methodWithTooManyParameters(int param1, int param2, int param3, int param4, int param5) {
          try {
