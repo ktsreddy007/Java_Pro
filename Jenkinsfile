@@ -1,11 +1,11 @@
 pipeline {
     agent any
-       /*environment {
+       environment {
         // Define the password as a masked environment variable
-        ARTIFACTORY_URL = 'http://192.168.56.1:8082/artifactory'   
-        ARTIFACTORY_USERNAME = credentials('Jfrog_Server')
-        ARTIFACTORY_PASSWORD = credentials('Jfrog_Server')   
-    }*/  
+        ARTIFACTORY_URL = 'http://192.168.56.1:8082/artifactory/Java_Pro'   
+        //ARTIFACTORY_USERNAME = credentials('Jfrog_Server')
+        //ARTIFACTORY_PASSWORD = credentials('Jfrog_Server')   
+    }
     stages 
     {
        stage("Project Source Code")
@@ -70,7 +70,7 @@ pipeline {
             {
                  rtServer (
                  id:"Artifactory",
-                url: 'http://192.168.56.1:8082/artifactory/Java_Pro', 
+                url: env.ARTIFACTORY_URL, 
                 username:'ktsreddy',
                 password:'Admin_123',
                 timeout:300)
