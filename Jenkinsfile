@@ -79,11 +79,7 @@ pipeline {
          {
          	steps {
                 // Run mvn clean to clean the project
-                bat "mvn clean"
-            }
-            steps
-            {
-                bat "mvn package"
+                bat "mvn clean package"
             }
         }
         
