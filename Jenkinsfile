@@ -62,7 +62,7 @@ pipeline {
                         dir('C:\\Users\\ktsreddy\\.jenkins\\workspace\\CI_Maven_Sonar') 
                         {
                             bat 'dir /s /b pom.xml | findstr /i "pom.xml"'
-                            bat "\"${env.M2_HOME}\"\\bin\\mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar \
+                            bat "\"${env.M2_HOME}\"\\bin\\mvn org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar \
                                   -Dsonar.projectName=%CI_Maven_Sonar% \
                                   -Dsonar.host.url=%SONAR_URL% \
                                   -Dsonar.java.binaries=.\\ \
@@ -73,9 +73,14 @@ pipeline {
                     }
                 }
             }
+            
         }
          stage("Build & Package")
          {
+         	steps {
+                // Run mvn clean to clean the project
+                bat "mvn clean"
+            }
             steps
             {
                 bat "mvn clean package"
