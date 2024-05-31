@@ -1,3 +1,5 @@
+package org.marvel.Avengers;
+
 public class SonarIssuesExample {
 
     // Unused private field
