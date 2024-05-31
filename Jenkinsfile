@@ -81,7 +81,7 @@ pipeline {
                     "files":[
                     {
                         "pattern":"*.jar",
-                        "target":"javapro-libs-snapshot-local/${version}"
+                        "target":"javapro-libs-snapshot-local"
                     }
                     ]
                 }''',)
