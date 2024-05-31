@@ -83,7 +83,7 @@ pipeline {
             }
             steps
             {
-                bat "mvn clean package"
+                bat "mvn package"
             }
         }
         
