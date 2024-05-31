@@ -23,21 +23,6 @@ pipeline {
                 bat "mvn clean compile"
             }
         }
-        
-         stage("UnitTest")
-         {
-            steps
-            {
-                bat "mvn test"
-            }
-        }
-         stage("Build & Package")
-         {
-            steps
-            {
-                bat "mvn clean package"
-            }
-        }
         stage('Static Code Analysis') 
         {
             steps 
@@ -59,6 +44,44 @@ pipeline {
                 }
             }
         }
+         stage("UnitTest")
+         {
+            steps
+            {
+                bat "mvn test"
+            }
+        }
+        stage('Sonar Code Coverage') 
+        {
+            steps 
+            {
+                withSonarQubeEnv('Sonarqube') {
+                    withCredentials([string(credentialsId: 'Jenkins_Sonar', variable: 'SONAR_AUTH_TOKEN')]) 
+                    {
+                        bat 'cd C:\\Users\\ktsreddy\\.jenkins\\workspace\\CI_Maven_Sonar'
+                        dir('C:\\Users\\ktsreddy\\.jenkins\\workspace\\CI_Maven_Sonar') 
+                        {
+                            bat 'dir /s /b pom.xml | findstr /i "pom.xml"'
+                            bat "\"${env.M2_HOME}\"\\bin\\mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar \
+                                  -Dsonar.projectName=%CI_Maven_Sonar% \
+                                  -Dsonar.host.url=%SONAR_URL% \
+                                  -Dsonar.java.binaries=.\\ \
+                                  -Dsonar.login=%SONAR_AUTH_TOKEN% \
+                                  -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml"
+                                  
+                        }
+                    }
+                }
+            }
+        }
+         stage("Build & Package")
+         {
+            steps
+            {
+                bat "mvn clean package"
+            }
+        }
+        
                 /* environment {
                 // Define the necessary Artifactory details
                 ARTIFACTORY_URL = ''
