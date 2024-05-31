@@ -68,7 +68,7 @@ pipeline {
                                   -Dsonar.java.binaries=.\\ \
                                   -Dsonar.login=%SONAR_AUTH_TOKEN% \
                                   -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml"
-                                  
+                                  -Dsonar.links.jacoco=target/site/jacoco/index.html
                         }
                     }
                 }
