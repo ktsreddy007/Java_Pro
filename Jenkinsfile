@@ -35,7 +35,7 @@ pipeline {
          {
             steps
             {
-                bat "mvn clean package"
+                bat "mvn clean package -Drevision=1.0-$(date +%Y%m%d%H%M%S)"
             }
         }
         stage('Static Code Analysis') 
