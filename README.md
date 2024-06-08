@@ -23,4 +23,5 @@ __LASVEGAS__
 
 | Teja | bar |Raj|
 | --- | --- |---|
+:-: | -----------:
 | baz | bim |Ram|
