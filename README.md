@@ -42,3 +42,6 @@ bim | Ram
 - blue
 
 > This is quoted text.
+
+
+This is `code`.
