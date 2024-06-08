@@ -25,11 +25,11 @@ __LASVEGAS__
 | - | --- | --- |
 | baz | bim | Ram |
 
-1.Teja
-1.Ram
-1.Ravi
+1. Teja
+1. Ram
+1. Ravi
 
--Black
- -color
--red
--blue
+- Black
+ - color
+- red
+- blue
