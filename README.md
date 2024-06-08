@@ -3,5 +3,5 @@ _Tej_
 **LASVEGAS**
 __LASVEGAS__
 \*Te*ja
-\_Te_ja
+\_Teja
 \\Tej\89
