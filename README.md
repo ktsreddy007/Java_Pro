@@ -14,4 +14,4 @@ __LASVEGAS__
 ##### foo
 ###### foo
 
-#######foo
+![Link an image.](/learn/azure-devops/shared/media/mara.png)
