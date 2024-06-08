@@ -24,3 +24,12 @@ __LASVEGAS__
 | Teja | bar | Raj |   
 | - | --- | --- |
 | baz | bim | Ram |
+
+1.Teja
+1.Ram
+1.Ravi
+
+-Black
+ -color
+-red
+-blue
