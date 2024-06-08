@@ -15,5 +15,5 @@ __LASVEGAS__
 ###### foo
 
 ![Link an image.](/learn/azure-devops/shared/media/mara.png)
-[OpenAI](https://openai.com)
+[OpenAI](/openai.com)
 [Link to Microsoft Training](/training)
